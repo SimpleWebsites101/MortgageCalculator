@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/privacy.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!--
+    ADD A NEW <url> BLOCK HERE FOR EACH NEW CALCULATOR PAGE YOU PUBLISH.
+    Copy the block below, change the loc to the new page's URL, and
+    update lastmod to the date you published or last edited it.
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/investment-calculator.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+</urlset>

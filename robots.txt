@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mortgagecalculator247.co.uk/sitemap.xml
