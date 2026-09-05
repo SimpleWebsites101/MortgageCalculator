@@ -1,0 +1,474 @@
+/* ============================================================
+   Ledger — mortgage calculator
+   Dark, high-end aesthetic: near-black walls, electric blue
+   reserved strictly for CTAs / active nav / hover / focus,
+   crisp white for headings and body text.
+   Type: Fraunces (headline), IBM Plex Sans (body/UI),
+         IBM Plex Mono (all numeric data)
+   ============================================================ */
+
+:root {
+  --wall: #0A0A0C;
+  --wall-raised: #131316;
+  --wall-panel: #17181C;
+  --white: #F6F7F9;
+  --white-soft: #A6A9B2;
+  --white-faint: #6B6E77;
+  --electric: #3B7DFF;
+  --electric-dim: #2A5BC4;
+  --line: #232429;
+  --line-strong: #303138;
+
+  --font-head: "Fraunces", Georgia, serif;
+  --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--white); text-decoration-thickness: 1px; }
+a:hover { color: var(--electric); }
+
+:focus-visible {
+  outline: 2px solid var(--electric);
+  outline-offset: 2px;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  border-bottom: 1px solid var(--line);
+  background: var(--wall-raised);
+}
+
+.masthead__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.masthead__mark {
+  font-family: var(--font-head);
+  font-size: 1.55rem;
+  font-weight: 500;
+  font-style: italic;
+  font-optical-sizing: auto;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.masthead__mark:hover { color: var(--white); text-decoration: none; }
+
+.masthead__nav { display: flex; gap: 28px; }
+
+.masthead__nav a {
+  font-size: 0.9rem;
+  color: var(--white-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.masthead__nav a:hover { color: var(--electric); border-bottom-color: var(--electric); }
+
+/* ---------- ad slots ---------- */
+
+.ad-slot {
+  max-width: 880px;
+  margin: 28px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ad-slot__label {
+  font-size: 0.7rem;
+  color: var(--white-faint);
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+.ad-slot__placeholder {
+  width: 100%;
+  max-width: 728px;
+  min-height: 90px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-faint);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: var(--wall-raised);
+}
+
+.ad-slot--incontent .ad-slot__placeholder { max-width: 336px; min-height: 280px; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 24px 8px;
+  text-align: left;
+}
+
+.hero__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--white-faint);
+  margin: 0 0 14px;
+}
+
+.hero__title {
+  font-family: var(--font-head);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  max-width: 18ch;
+  color: var(--white);
+}
+
+.hero__sub {
+  color: var(--white-soft);
+  font-size: 1.05rem;
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* ---------- calculator ---------- */
+
+.calculator {
+  max-width: 880px;
+  margin: 40px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.calculator__inputs {
+  background: var(--wall-panel);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  border-right: 1px solid var(--line);
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--white-soft);
+  margin-bottom: 6px;
+}
+
+.field__control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--wall);
+  padding: 8px 12px;
+  transition: border-color 0.15s ease;
+}
+
+.field__control:focus-within {
+  border-color: var(--electric);
+}
+
+.field__control input {
+  border: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--white);
+  width: 100%;
+  padding: 0;
+}
+
+.field__control input:focus { outline: none; }
+
+.field__prefix, .field__suffix {
+  font-family: var(--font-mono);
+  color: var(--white-faint);
+  font-size: 1.05rem;
+}
+
+.field__prefix { margin-right: 4px; }
+.field__suffix { margin-left: 4px; }
+
+.field__range {
+  width: 100%;
+  margin-top: 10px;
+  accent-color: var(--electric);
+}
+
+.calculator__result {
+  background: var(--wall);
+  color: var(--white);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result__label {
+  font-size: 0.9rem;
+  color: var(--white-soft);
+  margin: 0 0 6px;
+}
+
+.result__figure {
+  font-family: var(--font-mono);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 500;
+  color: var(--white);
+  margin: 0 0 28px;
+  letter-spacing: -0.01em;
+}
+
+.result__breakdown {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.result__breakdown div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.result__breakdown dt {
+  color: var(--white-soft);
+  font-size: 0.85rem;
+}
+
+.result__breakdown dd {
+  font-family: var(--font-mono);
+  margin: 0;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+/* ---------- schedule / chart ---------- */
+
+.schedule {
+  max-width: 880px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+.schedule__title {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 6px;
+  color: var(--white);
+}
+
+.schedule__sub {
+  color: var(--white-soft);
+  margin: 0 0 24px;
+  max-width: 60ch;
+}
+
+.schedule__chart-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--wall-panel);
+  padding: 16px;
+}
+
+.chart-frame {
+  position: relative;
+}
+
+#balance-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: crosshair;
+}
+
+.chart-axis-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--white-faint);
+}
+
+.chart-hover-line {
+  stroke: var(--electric);
+  stroke-width: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chart-hover-dot {
+  fill: var(--electric);
+  stroke: var(--wall-panel);
+  stroke-width: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chart-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -110%);
+  background: var(--wall);
+  border: 1px solid var(--electric);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--white);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  z-index: 5;
+}
+
+.chart-tooltip.is-visible { opacity: 1; }
+
+.chart-tooltip__year {
+  color: var(--white-soft);
+  margin-bottom: 4px;
+}
+
+.chart-tooltip__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.chart-tooltip__row + .chart-tooltip__row { margin-top: 2px; }
+
+.schedule__legend {
+  display: flex;
+  gap: 24px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--white-soft);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.dot--balance { background: var(--white); }
+.dot--interest { background: var(--white-faint); }
+
+/* ---------- guide ---------- */
+
+.guide {
+  max-width: 680px;
+  margin: 64px auto 0;
+  padding: 0 24px;
+}
+
+.guide h2 {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 16px;
+  color: var(--white);
+}
+
+.guide h3 {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--white);
+}
+
+.guide p {
+  color: var(--white-soft);
+  max-width: 62ch;
+  margin: 0 0 4px;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 64px;
+}
+
+.site-footer__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--white-faint);
+}
+
+.site-footer__inner p { margin: 0; max-width: 52ch; }
+.site-footer__inner nav { display: flex; gap: 20px; }
+.site-footer__inner nav a { color: var(--white-soft); }
+.site-footer__inner nav a:hover { color: var(--electric); }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+  .calculator {
+    grid-template-columns: 1fr;
+  }
+  .calculator__inputs {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead__nav { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 40px 16px 8px; }
+  .calculator, .schedule, .guide, .ad-slot, .site-footer__inner { padding-left: 16px; padding-right: 16px; }
+  .calculator__inputs, .calculator__result { padding: 24px 20px; }
+  .schedule__chart-wrap { padding: 10px; }
+}

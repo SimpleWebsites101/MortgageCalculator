@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SimpleMortgageCalculator — Mortgage Calculator</title>
+<meta name="description" content="Work out your monthly mortgage repayments, total interest, and full amortisation schedule with a free UK mortgage calculator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- ============================================================
+     GOOGLE ADSENSE — replace ca-pub-XXXXXXXXXXXXXXXX with your
+     own publisher ID once your AdSense account is approved.
+     ============================================================ -->
+<!--
+<script async src="https://pages02.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a href="/" class="masthead__mark">SimpleMortgageCalculator</a>
+    <nav class="masthead__nav">
+      <a href="#calculator">Calculator</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#guide">Guide</a>
+    </nav>
+  </div>
+</header>
+
+<!-- AD SLOT 1 — leaderboard, below masthead -->
+<div class="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot__placeholder">
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    728 × 90
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <p class="hero__kicker">UK mortgage calculator</p>
+    <h1 class="hero__title">See what a mortgage actually costs you, month by month.</h1>
+    <p class="hero__sub">Enter the loan amount, rate, and term below. Every figure updates as you type — no submit button, no waiting.</p>
+  </section>
+
+  <section id="calculator" class="calculator">
+    <div class="calculator__inputs">
+      <div class="field">
+        <label for="principal">Loan amount</label>
+        <div class="field__control">
+          <span class="field__prefix">£</span>
+          <input type="text" inputmode="numeric" id="principal" value="250,000">
+        </div>
+        <input type="range" id="principal-range" min="20000" max="1000000" step="1000" value="250000" class="field__range">
+      </div>
+
+      <div class="field">
+        <label for="rate">Interest rate</label>
+        <div class="field__control">
+          <input type="text" inputmode="decimal" id="rate" value="4.75">
+          <span class="field__suffix">%</span>
+        </div>
+        <input type="range" id="rate-range" min="0.5" max="12" step="0.05" value="4.75" class="field__range">
+      </div>
+
+      <div class="field">
+        <label for="term">Term</label>
+        <div class="field__control">
+          <input type="text" inputmode="numeric" id="term" value="25">
+          <span class="field__suffix">years</span>
+        </div>
+        <input type="range" id="term-range" min="5" max="40" step="1" value="25" class="field__range">
+      </div>
+
+      <div class="field">
+        <label for="deposit">Deposit</label>
+        <div class="field__control">
+          <span class="field__prefix">£</span>
+          <input type="text" inputmode="numeric" id="deposit" value="50,000">
+        </div>
+        <input type="range" id="deposit-range" min="0" max="500000" step="1000" value="50000" class="field__range">
+      </div>
+    </div>
+
+    <div class="calculator__result">
+      <p class="result__label">Monthly repayment</p>
+      <p class="result__figure" id="monthly-payment">£0</p>
+
+      <dl class="result__breakdown">
+        <div>
+          <dt>Total repaid</dt>
+          <dd id="total-repaid">£0</dd>
+        </div>
+        <div>
+          <dt>Total interest</dt>
+          <dd id="total-interest">£0</dd>
+        </div>
+        <div>
+          <dt>Loan-to-value</dt>
+          <dd id="ltv">0%</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="schedule" class="schedule">
+    <h2 class="schedule__title">Balance over time</h2>
+    <p class="schedule__sub">How your outstanding balance and cumulative interest move across the life of the loan.</p>
+    <div class="schedule__chart-wrap">
+      <div class="chart-frame">
+        <svg id="balance-chart" viewBox="0 0 720 320" role="img" aria-label="Chart of outstanding mortgage balance and cumulative interest over the loan term. Hover to see year-by-year figures."></svg>
+        <div class="chart-tooltip" id="chart-tooltip" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="schedule__legend">
+      <span><i class="dot dot--balance"></i> Outstanding balance</span>
+      <span><i class="dot dot--interest"></i> Cumulative interest paid</span>
+    </div>
+  </section>
+
+  <!-- AD SLOT 2 — in-content, between the tool and the explainer -->
+  <div class="ad-slot ad-slot--incontent" aria-label="Advertisement">
+    <span class="ad-slot__label">Advertisement</span>
+    <div class="ad-slot__placeholder">
+      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="rectangle"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+      336 × 280
+    </div>
+  </div>
+
+  <section id="guide" class="guide">
+    <h2>How this figure is worked out</h2>
+    <p>The calculator uses a standard repayment mortgage formula, which spreads both the capital you borrowed and the interest across equal monthly payments. Early payments are weighted more toward interest; later payments pay off more of the capital, even though the total payment stays the same throughout the term.</p>
+
+    <h3>What changes your monthly payment most</h3>
+    <p>Rate and term move the figure more than most people expect. Stretching a loan from 25 to 35 years lowers the monthly payment but usually increases the total interest paid by a large margin, because you're paying interest for an extra decade. A larger deposit reduces the loan amount directly, which lowers both the payment and the total interest.</p>
+
+    <h3>What this calculator doesn't include</h3>
+    <p>This tool estimates capital and interest only. It doesn't account for arrangement fees, early repayment charges, changes in interest rate after a fixed period ends, buildings insurance, or ground rent and service charges on leasehold properties. Treat the result as a starting estimate, not a mortgage offer.</p>
+  </section>
+
+  <!-- AD SLOT 3 — bottom, before footer -->
+  <div class="ad-slot ad-slot--incontent" aria-label="Advertisement">
+    <span class="ad-slot__label">Advertisement</span>
+    <div class="ad-slot__placeholder">
+      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="rectangle"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+      336 × 280
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p>SimpleMortgageCalculator is an independent calculator tool. Figures are estimates for guidance only and are not financial advice.</p>
+    <nav>
+      <a href="privacy.html">Privacy &amp; cookies</a>
+      <a href="#calculator">Calculator</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
