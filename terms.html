@@ -54,14 +54,47 @@
       </button>
       <nav class="masthead__nav" id="primary-nav" aria-label="Primary" hidden>
         <div class="masthead__section">
-          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-calculators">
-            <span>Calculators</span>
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-mortgage">
+            <span>Mortgage calculators</span>
             <span class="masthead__chevron" aria-hidden="true">▾</span>
           </button>
-          <ul class="masthead__submenu" id="menu-calculators" hidden>
+          <ul class="masthead__submenu" id="menu-mortgage" hidden>
             <li><a href="payment-schedule.html">Mortgage Repayment Schedule Calculator</a></li>
             <li><a href="mortgage-overpayment-calculator.html">Mortgage Overpayment Calculator</a></li>
             <li><a href="affordability.html">Mortgage Affordability Calculator</a></li>
+          </ul>
+        </div>
+        <div class="masthead__section">
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-savings">
+            <span>Savings &amp; interest</span>
+            <span class="masthead__chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="masthead__submenu" id="menu-savings" hidden>
+            <li><a href="savings-growth-calculator.html">Savings Growth Calculator</a></li>
+            <li><a href="savings-goal-calculator.html">Savings Goal Calculator</a></li>
+            <li><a href="fixed-rate-savings-calculator.html">Fixed-Rate Savings Calculator</a></li>
+          </ul>
+        </div>
+        <div class="masthead__section">
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-income">
+            <span>Income &amp; tax</span>
+            <span class="masthead__chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="masthead__submenu" id="menu-income" hidden>
+            <li><a href="take-home-pay-calculator.html">UK Take-Home Pay Calculator</a></li>
+            <li><a href="salary-increase-calculator.html">Salary Increase Calculator</a></li>
+            <li><a href="hourly-to-salary-calculator.html">Hourly Wage to Salary Calculator</a></li>
+          </ul>
+        </div>
+        <div class="masthead__section">
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-budget">
+            <span>Budgeting &amp; debt</span>
+            <span class="masthead__chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="masthead__submenu" id="menu-budget" hidden>
+            <li><a href="monthly-budget-calculator.html">Monthly Budget Calculator</a></li>
+            <li><a href="debt-repayment-calculator.html">Debt Repayment Calculator</a></li>
+            <li><a href="debt-snowball-avalanche-calculator.html">Debt Snowball vs Avalanche Calculator</a></li>
           </ul>
         </div>
         <div class="masthead__section">
@@ -86,22 +119,36 @@
     </nav>
 
     <h1 style="font-size:1.8rem;">Terms of use</h1>
-    <p style="color:var(--white-faint);font-size:0.85rem;">Last updated: 9 September 2026</p>
+    <p style="color:var(--white-faint);font-size:0.85rem;">Last updated: 25 October 2026</p>
 
     <h2 style="font-family:var(--font-body);font-size:1.05rem;font-weight:600;margin:32px 0 10px;">Acceptance of these terms</h2>
     <p>By using this website, you agree to these terms of use. If you don't agree with them, please don't use the site.</p>
 
     <h2 style="font-family:var(--font-body);font-size:1.05rem;font-weight:600;margin:32px 0 10px;">Not financial advice</h2>
-    <p>The calculators on this site provide estimates for general guidance only. They do not constitute financial, mortgage, or investment advice, and nothing on this site should be relied upon as a substitute for advice from a qualified, FCA-regulated mortgage adviser or financial adviser. We are not authorised or regulated by the Financial Conduct Authority (FCA), and this site does not arrange, broker, or recommend any specific mortgage product or lender.</p>
+    <p>The calculators on this site — covering mortgages, savings, pay and tax, budgeting and debt — provide estimates for general guidance only. They do not constitute financial, mortgage, investment, tax or debt advice, and nothing on this site should be relied upon as a substitute for advice from a qualified, FCA-regulated adviser, a qualified tax adviser, or a free debt advice service. For your own tax position, HMRC is the authority. We are not authorised or regulated by the Financial Conduct Authority (FCA), and this site does not arrange, broker or recommend any specific financial product, lender or provider.</p>
 
     <h2 style="font-family:var(--font-body);font-size:1.05rem;font-weight:600;margin:32px 0 10px;">Accuracy of figures</h2>
-    <p>We aim for the calculations on this site to be mathematically correct for the figures you enter, but we make no guarantee of accuracy, completeness, or suitability for your circumstances. Figures do not include fees, insurance, or other costs a real mortgage may involve — see the "What this calculator doesn't include" section on the calculator page for details. Always confirm final figures with a lender or qualified adviser before making financial decisions.</p>
+    <p>We aim for the calculations on this site to be mathematically correct for the figures you enter, and the tax calculators use thresholds published by HMRC on GOV.UK, but we make no guarantee of accuracy, completeness, or suitability for your circumstances. Each calculator page explains its assumptions and what it doesn't include — for example, mortgage figures exclude fees and insurance, savings figures assume a constant interest rate, and take-home pay is an annual estimate that may differ slightly from a payslip. Always confirm final figures with your lender, provider, employer, HMRC or a qualified adviser before making financial decisions.</p>
 
     <h2 style="font-family:var(--font-body);font-size:1.05rem;font-weight:600;margin:32px 0 10px;">Methodology</h2>
-    <p>This calculator uses the standard formula for a fixed-rate repayment (capital and interest) mortgage: your loan amount, interest rate and term are used to work out a fixed monthly payment, calculated so that the loan is fully paid off — capital and interest together — by the end of the term. Each month, interest is charged on whatever balance is still outstanding, and the rest of that month's payment reduces the capital; this is why early payments are weighted more toward interest and later payments pay off more capital, even though the monthly amount itself stays the same.</p>
-    <p>This is maintained by SimpleWebsites101, an individual. AI tools (including Claude, by Anthropic) were used in building this site and to help check the calculation approach against authoritative sources — it is not reviewed by a qualified financial professional, and you should treat it accordingly.</p>
-    <p><strong>Assumptions:</strong> a fixed interest rate for the full term you enter, with interest compounding monthly. <strong>What's excluded:</strong> arrangement or product fees, early repayment charges, buildings insurance, ground rent, service charges, and any change to your rate after a fixed or discounted period ends — see the calculator page for the full list.</p>
+    <p>Every calculator page includes its own explanation of how it works and what it assumes. In summary:</p>
+
+    <h3 style="font-family:var(--font-body);font-size:0.98rem;font-weight:600;margin:24px 0 8px;color:var(--white);">Mortgage calculators</h3>
+    <p>The mortgage calculators use the standard formula for a fixed-rate repayment (capital and interest) mortgage: your loan amount, interest rate and term are used to work out a fixed monthly payment, calculated so that the loan is fully paid off — capital and interest together — by the end of the term. Each month, interest is charged on whatever balance is still outstanding, and the rest of that month's payment reduces the capital; this is why early payments are weighted more toward interest and later payments pay off more capital, even though the monthly amount itself stays the same.</p>
+    <p><strong>Mortgage assumptions:</strong> a fixed interest rate for the full term you enter, with interest compounding monthly. <strong>What's excluded:</strong> arrangement or product fees, early repayment charges, buildings insurance, ground rent, service charges, and any change to your rate after a fixed or discounted period ends — see each calculator page for the full list.</p>
     <p><strong>Further reading on how UK repayment mortgages work:</strong> <a href="https://www.moneyhelper.org.uk/en/homes/buying-a-home/mortgage-repayment-options" target="_blank" rel="noopener">MoneyHelper — Interest-only and repayment mortgages explained</a> (MoneyHelper is a free, independent, government-backed money guidance service) and <a href="https://en.wikipedia.org/wiki/Repayment_mortgage" target="_blank" rel="noopener">Wikipedia — Repayment mortgage</a>, which sets out the underlying amortisation mechanics in more technical detail.</p>
+
+    <h3 style="font-family:var(--font-body);font-size:0.98rem;font-weight:600;margin:24px 0 8px;color:var(--white);">Savings calculators</h3>
+    <p>Savings rates are taken as an AER (annual equivalent rate). Interest is compounded monthly at the rate that compounds back to exactly that AER — (1 + AER)<sup>1/12</sup> − 1 — with deposits made at the start or end of each month. The Savings Goal Calculator solves for the level monthly deposit that reaches the target by the chosen date. The Fixed-Rate Savings Calculator models interest paid monthly, annually or at maturity, either added to the account or paid out. All savings figures assume the rate stays the same, show interest before tax, and ignore inflation, fees and withdrawals.</p>
+
+    <h3 style="font-family:var(--font-body);font-size:0.98rem;font-weight:600;margin:24px 0 8px;color:var(--white);">Income &amp; tax calculators</h3>
+    <p>The Take-Home Pay and Salary Increase calculators share one calculation engine, so they always agree. It supports the 2026/27 and 2025/26 tax years, using the Income Tax bands (including Scottish rates), Personal Allowance, employee Class 1 National Insurance thresholds and rates, and student and postgraduate loan thresholds published in HMRC's <a href="https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027" target="_blank" rel="noopener">Rates and thresholds for employers 2026 to 2027</a> and <a href="https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026" target="_blank" rel="noopener">2025 to 2026</a>, checked on 25 October 2026. Pay is converted to an annual figure; Income Tax is charged in bands on income above the Personal Allowance (reduced by £1 for every £2 of income over £100,000 under the standard 1257L code); National Insurance and student loan repayments are worked out on annual earnings; and the result is divided evenly into months and weeks. Net pay, relief at source and salary sacrifice pension contributions are each treated in the way they are applied through payroll.</p>
+    <p><strong>Tax calculator assumptions:</strong> one job with a regular salary paid through PAYE for the whole tax year, National Insurance category A, under State Pension age, and pension contributions calculated on full salary. <strong>Not covered:</strong> K tax codes, bonuses and irregular pay, benefits in kind, self-employment, savings and dividend income, the High Income Child Benefit Charge, means-tested benefits, more than one undergraduate student loan plan, and higher-rate pension relief claimed through Self Assessment. Because payroll calculates each pay period separately, payslips can differ from these estimates by small amounts. The Hourly Wage to Salary Calculator shows gross pay only, before any deductions.</p>
+
+    <h3 style="font-family:var(--font-body);font-size:0.98rem;font-weight:600;margin:24px 0 8px;color:var(--white);">Budgeting &amp; debt calculators</h3>
+    <p>The Monthly Budget Calculator converts each line to a monthly amount (weekly × 52 ÷ 12, quarterly ÷ 3, yearly ÷ 12) and adds them up; it doesn't judge your budget against any fixed rule. The debt calculators work in whole pence: each month interest is added to the balance — at the monthly rate equivalent to the APR, or the yearly rate ÷ 12 if you choose that option — rounded to the nearest penny, then the payment is taken, with the final payment limited to what's left. The Debt Snowball vs Avalanche Calculator gives both strategies the same total monthly budget (all minimum payments plus any extra) and rolls freed-up payments into the next debt. Debt figures assume a constant rate, fixed payments and no fees or new borrowing; lenders' own interest calculations can differ.</p>
+
+    <p>This is maintained by SimpleWebsites101, an individual. AI tools (including Claude, by Anthropic) were used in building this site and to help check the calculation approach against authoritative sources such as GOV.UK. The calculations are covered by automated tests, but the site is not reviewed by a qualified financial or tax professional, and you should treat it accordingly.</p>
 
     <h2 style="font-family:var(--font-body);font-size:1.05rem;font-weight:600;margin:32px 0 10px;">Limitation of liability</h2>
     <p>To the fullest extent permitted by law, we accept no liability for any loss or damage arising from your use of this site or reliance on any figures it produces, whether direct, indirect, or consequential. The site is provided "as is" without warranties of any kind.</p>
