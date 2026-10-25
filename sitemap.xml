@@ -3,21 +3,21 @@
 
   <url>
     <loc>https://mortgagecalculator247.co.uk/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://mortgagecalculator247.co.uk/privacy.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://mortgagecalculator247.co.uk/terms.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -52,9 +52,72 @@
 
   <url>
     <loc>https://mortgagecalculator247.co.uk/release-notes.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/savings-growth-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/savings-goal-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/fixed-rate-savings-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/take-home-pay-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/salary-increase-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/hourly-to-salary-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/monthly-budget-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/debt-repayment-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mortgagecalculator247.co.uk/debt-snowball-avalanche-calculator.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!--

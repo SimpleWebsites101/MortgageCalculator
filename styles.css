@@ -2705,3 +2705,529 @@ table.comparison-table {
     padding-right: 16px;
   }
 }
+
+/* ============================================================
+   Financial calculator library (v1.1.0)
+   Shared styles for the savings, income & tax and budgeting & debt
+   calculators. Every rule below reuses the existing tokens and
+   component language (compact-bar, milestone cards, schedule tables,
+   validation messages) — nothing here changes how the existing
+   mortgage pages look. Scoped to .tool-page where a class is shared.
+   ============================================================ */
+
+.tool-page .hero,
+.tool-page .guide,
+.tool-page .faq,
+.tool-page .related-tools,
+.tool-page .tools-showcase,
+.tool-page .schedule,
+.tool-page .site-footer__inner {
+  max-width: 1160px;
+}
+
+.tool-page .hero__title {
+  max-width: 34ch;
+}
+
+.tool-page .hero__lead,
+.tool-page .hero__sub {
+  max-width: 700px;
+}
+
+.tool-page .guide p,
+.tool-page .guide__list,
+.tool-page .faq__item p {
+  max-width: 740px;
+}
+
+.tool-page .guide p + p {
+  margin-top: 12px;
+}
+
+.tool-page .button {
+  min-height: 44px;
+}
+
+.tool-page .milestones h2 {
+  margin-bottom: 6px;
+}
+
+/* Sources sit inside the 1160px column on calculator pages (on article
+   pages they live inside .article-container instead). */
+.tool-page .sources {
+  max-width: 1160px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+.tool-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--white-faint);
+  margin: 14px 0 0;
+}
+
+/* ---------- form controls ---------- */
+
+.field__control select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%237F8285' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 2px center;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--white);
+  width: 100%;
+  padding: 0 20px 0 0;
+  cursor: pointer;
+  min-height: 1.6em;
+}
+
+.field__control select:focus {
+  outline: none;
+}
+
+.field__control select option {
+  background: var(--wall-panel);
+  color: var(--white);
+}
+
+.field__control:has([aria-invalid="true"]) {
+  border-color: var(--white-soft);
+}
+
+.field__error {
+  font-size: 0.75rem;
+  color: var(--white);
+  margin: 4px 0 0;
+}
+
+.field__error::before {
+  content: "Error: ";
+  color: var(--white-soft);
+}
+
+.field__error[hidden] {
+  display: none;
+}
+
+.field__hint {
+  font-size: 0.72rem;
+  color: var(--white-faint);
+  margin: 2px 0 0;
+}
+
+/* A second (or third) row of inputs inside one .compact-bar section. */
+.compact-bar__row + .compact-bar__row {
+  margin-top: 12px;
+}
+
+.compact-bar__row legend:not(.visually-hidden) {
+  float: left;
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--white-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 2px;
+}
+
+.compact-bar__field[hidden] {
+  display: none;
+}
+
+.calc-options + .compact-bar__row {
+  margin-top: 20px;
+}
+
+.compact-bar__field--wide {
+  flex: 2;
+  min-width: 200px;
+}
+
+.calc-note {
+  margin-top: 16px;
+}
+
+/* Inline option pills (radio groups) under the inputs. */
+.calc-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 40px;
+  margin-top: 20px;
+}
+
+.calc-options .mode-selector {
+  margin: 0;
+}
+
+.mode-selector--compact label {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  min-height: 40px;
+}
+
+.validation-message ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.validation-message p {
+  margin: 0;
+}
+
+.validation-message p:empty {
+  display: none;
+}
+
+/* ---------- results ---------- */
+
+.result-tile {
+  cursor: default;
+}
+
+.result-tile:hover {
+  border-color: var(--line);
+}
+
+.result-tile--highlight,
+.result-tile--highlight:hover {
+  border-color: var(--electric);
+}
+
+.result-tile .milestone-card__balance {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  overflow-wrap: anywhere;
+}
+
+/* Horizontal split bar (e.g. contributions vs interest, where gross pay
+   goes). Segment colours are set inline from the existing palette. */
+.split-bar {
+  display: flex;
+  height: 12px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--line);
+  margin: 28px 0 12px;
+}
+
+.split-bar__seg {
+  height: 100%;
+  min-width: 0;
+}
+
+.split-bar + .schedule__legend {
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 0;
+}
+
+/* Category breakdown list (budget). Bars, not a pie: easier to compare
+   and readable at any width. */
+.bar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.bar-list__row {
+  display: grid;
+  grid-template-columns: minmax(140px, 1.2fr) 2fr minmax(150px, auto);
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.bar-list__label {
+  color: var(--white);
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.bar-list__track {
+  height: 8px;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar-list__fill {
+  display: block;
+  height: 100%;
+  background: var(--electric);
+}
+
+.bar-list__fill--savings {
+  background: var(--white);
+}
+
+.bar-list__value {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--white);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bar-list__value span {
+  color: var(--white-faint);
+  margin-left: 8px;
+}
+
+@media (max-width: 620px) {
+  .bar-list__row {
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+  }
+
+  .bar-list__track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+/* Chart wrapper reuses .schedule__chart-wrap; the SVG itself matches the
+   repayment schedule chart (#balance-chart) without relying on its id. */
+.calc-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: crosshair;
+}
+
+.calc-section-sub {
+  color: var(--white-soft);
+  max-width: 62ch;
+  margin: 0 0 20px;
+}
+
+/* Long month-by-month tables scroll inside their own box with a sticky
+   header rather than making the page enormous. */
+.schedule-table-wrap--tall {
+  max-height: 560px;
+  overflow: auto;
+}
+
+.schedule-table-wrap--tall thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.schedule-table td.is-total,
+.schedule-table th.is-total {
+  color: var(--white);
+}
+
+.schedule-table tr.is-total-row td {
+  color: var(--white);
+  font-weight: 600;
+  background: var(--wall-panel);
+}
+
+.cell-sub {
+  display: block;
+  font-size: 0.78em;
+  color: var(--white-faint);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.schedule-table td.is-muted {
+  color: var(--white-faint);
+}
+
+/* ---------- editable line items (budget lines, debts) ---------- */
+
+.compact-bar__row--stack {
+  display: block;
+}
+
+.line-items__title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--white-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px;
+}
+
+.line-items__head {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr) minmax(0, 1fr) 44px;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: var(--white-soft);
+  margin-bottom: 4px;
+}
+
+.line-items__head--debt {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr) minmax(0, 0.9fr) minmax(0, 1.1fr) 44px;
+}
+
+/* Per-field labels are announced to screen readers everywhere, but only
+   shown on narrow screens where the column headings above are hidden. */
+@media (min-width: 721px) {
+  .line-item__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .line-items__head {
+    display: none;
+  }
+}
+
+.line-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.line-item {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr) minmax(0, 1fr) 44px;
+  gap: 12px;
+  align-items: end;
+}
+
+.line-item--debt {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr) minmax(0, 0.9fr) minmax(0, 1.1fr) 44px;
+}
+
+.line-item .field__control {
+  min-height: 42px;
+}
+
+.bar-list__label .is-muted {
+  color: var(--white-faint);
+}
+
+.line-item .compact-bar__field {
+  min-width: 0;
+}
+
+.line-item__remove {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--white-soft);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.line-item__remove:hover {
+  border-color: var(--electric);
+  color: var(--white);
+}
+
+.line-item__remove[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.line-item .field__control input[type="text"]:not([inputmode]) {
+  font-family: var(--font-body);
+}
+
+.line-items__add {
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
+@media (max-width: 720px) {
+  .line-item,
+  .line-item--debt {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .line-item > .compact-bar__field:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .line-item__remove {
+    justify-self: start;
+  }
+}
+
+/* Comparison table for the strategy/rate tables. */
+.tool-page .comparison-table {
+  min-width: 480px;
+}
+
+.comparison-table td.is-highlight {
+  color: var(--electric);
+}
+
+.comparison-table tr.is-current td {
+  background: rgba(59, 125, 255, 0.08);
+}
+
+@media (max-width: 480px) {
+  .tool-page .sources {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ============================================================
+   Homepage: four calculator categories
+   ============================================================ */
+
+/* Cards in a row share one height, so if a longer title wraps onto two
+   lines the title strips grow together and the screenshots stay aligned.
+   No visible effect when every title fits on one line. */
+.calc-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-card__title {
+  flex: 1 0 auto;
+}
+
+.resource-group__category + .resource-group__category {
+  margin-top: 48px;
+}
+
+/* ---------- category heading icons (experimental) ----------
+   Small inline Lucide outline icons beside each category heading.
+   To remove them: delete the <svg class="category-icon"> elements in
+   index.html and this block. To restyle: change the colour or size
+   here — every icon inherits currentColor. */
+.resource-group__subheading--with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--electric);
+}

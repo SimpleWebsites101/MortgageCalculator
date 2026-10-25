@@ -103,14 +103,47 @@
       </button>
       <nav class="masthead__nav" id="primary-nav" aria-label="Primary" hidden>
         <div class="masthead__section">
-          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-calculators">
-            <span>Calculators</span>
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-mortgage">
+            <span>Mortgage calculators</span>
             <span class="masthead__chevron" aria-hidden="true">▾</span>
           </button>
-          <ul class="masthead__submenu" id="menu-calculators" hidden>
+          <ul class="masthead__submenu" id="menu-mortgage" hidden>
             <li><a href="payment-schedule.html">Mortgage Repayment Schedule Calculator</a></li>
             <li><a href="mortgage-overpayment-calculator.html">Mortgage Overpayment Calculator</a></li>
             <li><a href="affordability.html">Mortgage Affordability Calculator</a></li>
+          </ul>
+        </div>
+        <div class="masthead__section">
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-savings">
+            <span>Savings &amp; interest</span>
+            <span class="masthead__chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="masthead__submenu" id="menu-savings" hidden>
+            <li><a href="savings-growth-calculator.html">Savings Growth Calculator</a></li>
+            <li><a href="savings-goal-calculator.html">Savings Goal Calculator</a></li>
+            <li><a href="fixed-rate-savings-calculator.html">Fixed-Rate Savings Calculator</a></li>
+          </ul>
+        </div>
+        <div class="masthead__section">
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-income">
+            <span>Income &amp; tax</span>
+            <span class="masthead__chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="masthead__submenu" id="menu-income" hidden>
+            <li><a href="take-home-pay-calculator.html">UK Take-Home Pay Calculator</a></li>
+            <li><a href="salary-increase-calculator.html">Salary Increase Calculator</a></li>
+            <li><a href="hourly-to-salary-calculator.html">Hourly Wage to Salary Calculator</a></li>
+          </ul>
+        </div>
+        <div class="masthead__section">
+          <button type="button" class="masthead__section-toggle" aria-expanded="false" aria-controls="menu-budget">
+            <span>Budgeting &amp; debt</span>
+            <span class="masthead__chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="masthead__submenu" id="menu-budget" hidden>
+            <li><a href="monthly-budget-calculator.html">Monthly Budget Calculator</a></li>
+            <li><a href="debt-repayment-calculator.html">Debt Repayment Calculator</a></li>
+            <li><a href="debt-snowball-avalanche-calculator.html">Debt Snowball vs Avalanche Calculator</a></li>
           </ul>
         </div>
         <div class="masthead__section">
@@ -139,17 +172,55 @@
 
   <section class="release-latest" aria-labelledby="latest-release-label">
     <p class="release-latest__label" id="latest-release-label">Latest release</p>
-    <p class="release-latest__version">v1.0.0</p>
-    <p class="release-latest__date">3 October 2026</p>
-    <p class="release-latest__summary">The baseline this release history starts from: three free mortgage calculators, one in-depth guide, and the pages around them.</p>
+    <p class="release-latest__version">v1.1.0</p>
+    <p class="release-latest__date">25 October 2026</p>
+    <p class="release-latest__summary">Nine new calculators across savings, income and tax, and budgeting and debt — taking the site from three mortgage calculators to twelve, in four categories.</p>
   </section>
 
   <nav class="release-nav" id="release-index" aria-label="Jump to a release">
-    <a href="#v1-0-0" class="release-nav__item release-nav__item--latest">v1.0.0</a>
+    <a href="#v1-1-0" class="release-nav__item release-nav__item--latest">v1.1.0</a>
+    <a href="#v1-0-0" class="release-nav__item">v1.0.0</a>
   </nav>
 
   <section class="release-history" aria-label="Release history">
     <p class="release-note">Formal release notes begin with this version. 24/7 UK Mortgage Calculator already provided free repayment, overpayment and affordability calculators, plus a mortgage rates guide, before this point — this is simply where we started keeping a public record of changes.</p>
+
+    <article class="release-entry" id="v1-1-0">
+      <h2 class="release-entry__version">v1.1.0</h2>
+      <p class="release-entry__date">25 October 2026</p>
+      <p class="release-entry__summary">The site grows from a set of mortgage tools into a library of twelve free UK money calculators in four categories. The three mortgage calculators are unchanged.</p>
+
+      <h3 class="release-entry__category">Savings &amp; Interest</h3>
+      <ul class="release-entry__list">
+        <li><strong>Savings Growth Calculator</strong> — Projects a savings balance from a starting amount, monthly deposits and an AER, with deposits at the start or end of each month. Shows the final balance, what you pay in, interest earned, a growth chart and a year-by-year table. Interest compounds monthly at the rate equivalent to the AER.</li>
+        <li><strong>Savings Goal Calculator</strong> — Works out the monthly saving needed to reach a target by a chosen date, allowing for interest. Handles goals already reached or reachable through interest alone, compares the monthly amount across interest rates, and shows a year-by-year timeline.</li>
+        <li><strong>Fixed-Rate Savings Calculator</strong> — Estimates the interest and maturity value of a fixed-term deposit for interest paid monthly, annually or at maturity, either added to the bond or paid to another account, with a side-by-side comparison of all five arrangements and a payment-by-payment breakdown.</li>
+      </ul>
+
+      <h3 class="release-entry__category">Income &amp; Tax</h3>
+      <ul class="release-entry__list">
+        <li><strong>UK Take-Home Pay Calculator</strong> — Estimates take-home pay after Income Tax, employee National Insurance, pension and student loan deductions for the 2026/27 and 2025/26 tax years, using HMRC’s published thresholds. Supports Scottish rates, the Personal Allowance taper above £100,000, common tax codes (including BR, 0T, D0, D1 and NT), net pay, relief at source and salary sacrifice pensions, Plans 1, 2, 4 and 5, and Postgraduate Loans.</li>
+        <li><strong>Salary Increase Calculator</strong> — Shows how much of a pay rise you’d keep, entered as a percentage or a new salary, with a deduction-by-deduction before-and-after table and notes when a rise crosses a tax or student loan threshold. Uses the same calculation engine as the Take-Home Pay Calculator.</li>
+        <li><strong>Hourly Wage to Salary Calculator</strong> — Converts an hourly rate into weekly, monthly and annual gross pay, with paid weeks per year, optional overtime and a National Living Wage check. Links through to the Take-Home Pay Calculator with the annual figure filled in.</li>
+      </ul>
+
+      <h3 class="release-entry__category">Budgeting &amp; Debt</h3>
+      <ul class="release-entry__list">
+        <li><strong>Monthly Budget Calculator</strong> — Editable income, spending and savings lines, each with its own frequency (weekly, monthly, quarterly or yearly). Shows totals, money left over or the shortfall, savings rate, a breakdown by line and annual figures. Nothing entered is stored or sent.</li>
+        <li><strong>Debt Repayment Calculator</strong> — Works out the payoff date, number of payments, total interest and final payment for a single debt, and what an extra monthly payment would save. Payments that don’t cover the interest are flagged with workable alternatives instead of an endless schedule.</li>
+        <li><strong>Debt Snowball vs Avalanche Calculator</strong> — Compares paying several debts smallest-balance-first and highest-rate-first with the same monthly budget, including debt-free dates, total interest, payoff order, a chart of total debt over time and a month-by-month plan for each strategy.</li>
+      </ul>
+
+      <h3 class="release-entry__category">Site</h3>
+      <ul class="release-entry__list">
+        <li><strong>Homepage</strong> — Calculators are now grouped into four categories — Mortgage Calculators, Savings &amp; Interest, Income &amp; Tax, and Budgeting &amp; Debt — each with a small outline icon and a row of calculator cards with real screenshot previews. The introduction now describes the wider library.</li>
+        <li><strong>Navigation</strong> — The menu on every page lists all four calculator categories alongside Articles, and highlights the page you’re on.</li>
+        <li><strong>Privacy &amp; cookies and Terms of use</strong> — Updated to cover the whole calculator library, including how the savings, tax, budgeting and debt calculations work, which tax years are supported and where the figures come from. Figures you enter are never added to page addresses: when one calculator hands a figure to another, it stays in your browser tab.</li>
+        <li><strong>Calculation accuracy</strong> — Shared calculation modules for savings, UK tax, pay, budgeting and debt, covered by automated tests, so related calculators always use the same rules.</li>
+      </ul>
+
+      <a href="#release-index" class="release-back-link">Back to release index ↑</a>
+    </article>
 
     <article class="release-entry" id="v1-0-0">
       <h2 class="release-entry__version">v1.0.0</h2>
